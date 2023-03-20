@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Seller Panel</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <!-- Custom CSS -->
+    <style>
+      body {
+        background: url("https://images.pexels.com/photos/4840134/pexels-photo-4840134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+          rgba(0, 0, 0, 0.5);
+        background-size: cover;
+        /* background-color: indigo; */
+        margin: 0;
+        padding: 0;
+        color: white;
+      }
+
+      body div h1 {
+        border: 2px solid white;
+        background-color: #0b5167;
+        padding: 3px 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .btn-submit {
+        background-color: #1abc9c;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .btn-submit:hover {
+        background-color: #16a085;
+      }
+
+      #electronics,
+      #accessories,
+      #cosmetics {
+        background-color: rgb(2, 2, 27);
+        border-radius: 12px;
+        margin: 1rem;
+      }
+
+      #itmeSummary h2{
+        text-align: center;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-5">ADD ITEMS</h1>
+      <form id="inputForm">
+        <div class="form-group">
+          <label for="productName">Product Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productName"
+            placeholder="Enter product name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="productPrice">Product Price:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="productPrice"
+            placeholder="Enter product Price"
+          />
+        </div>
+        <div class="form-group">
+          <label for="productCategory">Product Category:</label>
+          <select class="form-control" id="productCategory">
+            <option value="">Choose Category</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Cosmetics">Cosmetics</option>
+            <option value="Home Accessories">Home Accessories</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-submit btn-block">
+          Add Product
+        </button>
+      </form>
+    </div>
+
+    <!-- Items Summary-->
+    <div id="itmeSummary" class="container-fluid mt-5 mb-5">
+      <h2>Product Summary</h2>
+      <div id="mainTable" class="row justify-content-center">
+        <div id="electronics" class="col-7">
+          <h3 class="text-warning text-center">Electronics</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price(₹)</th>
+                <th scope="col" style="width: 25%;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="electronicsTable" class="table-group-divider"></tbody>
+          </table>
+        </div>
+        <div id="cosmetics" class="col-7">
+          <h3 class="text-warning text-center">Cosmetics</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price(₹)</th>
+                <th scope="col" style="width: 25%;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="cosmeticsTable" class="table-group-divider"></tbody>
+          </table>
+        </div>
+        <div id="accessories" class="col-7">
+          <h3 class="text-warning text-center">Home Accessories</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price(₹)</th>
+                <th scope="col" style="width: 25%;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="accessoriesTable" class="table-group-divider"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
